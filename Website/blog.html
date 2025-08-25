@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | The People Studio</title>
+    <link rel="icon" type="image/png" href="../CompanyLogo.jpg">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter (for body) and Lora (for headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Lora', 'serif'],
+                    },
+                    colors: {
+                        'brand-primary': '#4A69E2',
+                        'brand-secondary': '#FDFBF5',
+                        'brand-dark': '#2C2C2C',
+                        'brand-accent-red': '#E84D4D',
+                        'brand-accent-yellow': '#F2C94C',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        h1, h2, h3, h4 { font-family: 'Lora', serif; }
+        
+        header nav a { position: relative; }
+        header nav a:not(.active-link)::after {
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: -4px; left: 50%; transform: translateX(-50%);
+            background-color: #4A69E2; transition: width 0.3s ease-in-out;
+        }
+        header nav a:hover::after { width: 100%; }
+        .active-link { color: #4A69E2; font-weight: 600; }
+
+        .blog-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-brand-secondary font-sans text-slate-700">
+
+    <!-- Header Section -->
+    <header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-200">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="./home.html">
+                <img src="../CompanyLogo.jpg" alt="The People Studio Logo" class="h-16 w-auto">
+            </a>
+            <nav class="hidden md:flex items-center space-x-10 text-slate-600">
+                <a href="./home.html" class="hover:text-brand-primary transition-colors">Home</a>
+                <a href="./about.html" class="hover:text-brand-primary transition-colors">About Us</a>
+                <a href="./services.html" class="hover:text-brand-primary transition-colors">Services</a>
+                <a href="#" class="active-link">Blog</a>
+                <a href="./contact.html" class="hover:text-brand-primary transition-colors">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-slate-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+             <a href="./home.html" class="block text-slate-600 hover:text-brand-primary transition-colors">Home</a>
+            <a href="./about.html" class="block text-slate-600 hover:text-brand-primary transition-colors">About Us</a>
+            <a href="./services.html" class="block text-slate-600 hover:text-brand-primary transition-colors">Services</a>
+            <a href="#" class="block text-brand-primary font-semibold">Blog</a>
+            <a href="./contact.html" class="block text-slate-600 hover:text-brand-primary transition-colors">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header Section -->
+        <section class="py-16 md:py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-brand-dark">Insights from The People Studio</h1>
+                <p class="mt-4 text-lg max-w-3xl mx-auto text-slate-600">Explore our latest articles on leadership, workplace culture, and people-first strategies.</p>
+            </div>
+        </section>
+
+        <!-- Blog Posts Section -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <!-- Featured Post -->
+                <!-- Replace the href with your actual blog post URL -->
+                <a href="https://yourblog.blogspot.com/2025/08/building-psychological-safety.html" target="_blank" rel="noopener noreferrer" class="group grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-16">
+                    <div class="overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="Team collaborating on a project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div>
+                        <p class="text-brand-primary font-semibold text-sm mb-2">LEADERSHIP</p>
+                        <h2 class="text-3xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors">The Leader's Guide to Building Psychological Safety in the Workplace</h2>
+                        <p class="mt-4 text-slate-600">Psychological safety is the bedrock of high-performing teams. Discover three actionable strategies you can implement today to foster an environment of trust and open communication.</p>
+                        <p class="mt-4 font-semibold text-slate-800">Read More &rarr;</p>
+                    </div>
+                </a>
+
+                <!-- Grid of Other Posts -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Blog Card 1 -->
+                    <!-- Replace the href with your actual blog post URL -->
+                    <a href="https://yourblog.blogspot.com/2025/08/5-signs-culture-needs-refresh.html" target="_blank" rel="noopener noreferrer" class="blog-card bg-white rounded-lg shadow-md overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop" alt="Diverse group of people in a workshop" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-brand-primary font-semibold text-sm mb-2">CULTURE</p>
+                            <h3 class="text-xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors">5 Signs Your Company Culture Needs a Refresh</h3>
+                            <p class="mt-3 text-slate-600 text-sm">Is your culture helping or hindering your growth? Look for these five tell-tale signs that it might be time for a cultural reset.</p>
+                        </div>
+                    </a>
+                    <!-- Blog Card 2 -->
+                    <!-- Replace the href with your actual blog post URL -->
+                    <a href="https://yourblog.blogspot.com/2025/08/hiring-for-organizational-fit.html" target="_blank" rel="noopener noreferrer" class="blog-card bg-white rounded-lg shadow-md overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" alt="A person presenting to a team" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-brand-primary font-semibold text-sm mb-2">RECRUITMENT</p>
+                            <h3 class="text-xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors">Hiring for Tomorrow: The Power of Organizational Fit</h3>
+                            <p class="mt-3 text-slate-600 text-sm">Why looking beyond the resume is critical for long-term retention and success. Learn how to assess for cultural and value alignment.</p>
+                        </div>
+                    </a>
+                    <!-- Blog Card 3 -->
+                    <!-- Replace the href with your actual blog post URL -->
+                    <a href="https://yourblog.blogspot.com/2025/08/posh-compliance-value.html" target="_blank" rel="noopener noreferrer" class="blog-card bg-white rounded-lg shadow-md overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop" alt="People working on laptops at a table" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-brand-primary font-semibold text-sm mb-2">COMPLIANCE</p>
+                            <h3 class="text-xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors">POSH Compliance: More Than Just a Legal Requirement</h3>
+                            <p class="mt-3 text-slate-600 text-sm">Understand the true value of robust POSH policies in creating a workplace that is not only safe but also attractive to top talent.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-100">
+       <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-xl font-bold text-brand-dark mb-4">The People Studio</h3>
+                    <p class="text-slate-600">Crafting journeys of growth and impact. We create environments where individuals flourish and organizations excel.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-brand-dark mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="./home.html" class="text-slate-600 hover:text-brand-primary">Home</a></li>
+                        <li><a href="./about.html" class="text-slate-600 hover:text-brand-primary">About Us</a></li>
+                        <li><a href="./services.html" class="text-slate-600 hover:text-brand-primary">Services</a></li>
+                        <li><a href="./contact.html" class="text-slate-600 hover:text-brand-primary">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-brand-dark mb-4">Contact</h4>
+                    <ul class="space-y-2 text-slate-600">
+                        <li><a href="mailto:sandhya.prithvi@thepeoplestudio.com" class="hover:text-brand-primary">sandhya.prithvi@thepeoplestudio.com</a></li>
+                        <li><a href="tel:+919739550101" class="hover:text-brand-primary">+91 9739550101</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-slate-200 pt-6 text-center text-sm text-slate-500">
+                <p>&copy; 2025 The People Studio. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
