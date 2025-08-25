@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The People Studio | People-First HR Consulting</title>
     <link rel="icon" type="image/png" href="CompanyLogo.jpg">
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter (for body) and Lora (for headings) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Custom Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -65,39 +62,47 @@
             width: 100%;
         }
 
-        /* --- STYLES FOR SCROLLING CLIENT LOGO CAROUSEL --- */
+        /* --- CORRECTED STYLES FOR SCROLLING CLIENT LOGO CAROUSEL --- */
+
+        /* This container acts as the "viewport" or "mask" for the scroller. */
+        .scroller-container {
+            overflow: hidden;
+            /* Adds a nice fade effect to the edges instead of a hard cut-off */
+            -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+        }
+
+        .scroller-inner {
+            display: flex;
+            flex-wrap: nowrap; /* Prevents logos from wrapping to the next line */
+            width: max-content; /* Ensures the container is wide enough for all logos */
+            animation: scroll 50s linear infinite;
+            will-change: transform;
+        }
         
-        /* The container for each logo, ensuring uniform size and spacing */
         .logo-item {
-            /* INCREASED SIZE: Made the container for each logo larger */
-            height: 8rem;  /* 96px */
-            width: 15rem; /* 192px */
+            height: 8rem;  /* 128px */
+            width: 15rem; /* 240px */
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1rem; /* Added padding to ensure logos have space */
+            padding: 1rem;
+            flex-shrink: 0; /* KEY FIX: Prevents logos from shrinking on small screens */
         }
 
-        /* The actual logo image styling */
         .client-logo-scroll {
-            max-width: 250%;
-            max-height: 1500%;
-            object-fit: contain; /* This is the key: scales image without cropping/stretching */
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Scales image without cropping/stretching */
             filter: grayscale(100%);
             opacity: 0.7;
-            transition: all 0.1s ease;
+            transition: all 0.3s ease;
         }
 
         .client-logo-scroll:hover {
             filter: grayscale(0%);
             opacity: 1;
-            transform: scale(1.1); /* Slightly larger zoom on hover */
-        }
-        
-        .scroller-inner {
-            /* ADJUSTED SPEED: Increased animation duration for a smoother, slower scroll */
-            animation: scroll 50s linear infinite;
-            will-change: transform;
+            transform: scale(1.1);
         }
         
         @keyframes scroll {
@@ -112,7 +117,6 @@
 </head>
 <body class="bg-white font-sans text-slate-700">
 
-    <!-- Header Section -->
     <header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-200">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#">
@@ -144,7 +148,6 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section class="relative bg-brand-dark text-white">
             <div class="absolute inset-0">
                 <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" alt="A modern and professional workplace with a diverse team" class="w-full h-full object-cover opacity-30" onerror="this.onerror=null;this.src='https://placehold.co/1600x900/2C2C2C/cccccc?text=Our+Team';">
@@ -164,11 +167,10 @@
             </div>
         </section>
 
-        <!-- Introduction Section with Image -->
         <section class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                 <div class="text-left">
-                    <h2 class="text-3xl font-bold text-brand-dark">Welcome to The People Studio</h2>                    <div class="w-24 h-1 bg-brand-primary my-6 rounded"></div>
+                    <h2 class="text-3xl font-bold text-brand-dark">Welcome to The People Studio</h2>                     <div class="w-24 h-1 bg-brand-primary my-6 rounded"></div>
                     <p class="text-slate-600 text-lg mb-4">
                         At The People Studio, we believe people are at the heart of every thriving organization. We go beyond traditional consulting to build people-first solutions that empower growth, harmony, and success.
                     </p>
@@ -182,7 +184,6 @@
             </div>
         </section>
 
-        <!-- Services Section -->
         <section id="services" class="py-16 md:py-24 bg-slate-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
@@ -191,7 +192,6 @@
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service cards -->
                     <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow">
                         <h3 class="text-xl font-semibold text-brand-dark mb-2">POSH Consulting & Compliance</h3>
                         <p class="text-slate-600">Certified expertise to enable safe, respectful, and inclusive workplaces.</p>
@@ -215,8 +215,8 @@
                     <a href="./service.html" class="group bg-transparent border-2 border-dashed border-slate-300 p-8 rounded-xl flex flex-col items-center justify-center text-center hover:border-brand-primary hover:bg-slate-100 transition-all">
                         <div class="text-brand-primary mb-3">
                              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 transition-transform group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                             </svg>
                         </div>
                         <h3 class="text-xl font-semibold text-brand-dark">Explore All Services</h3>
                         <p class="text-slate-500 mt-1">See how we can help you grow.</p>
@@ -225,8 +225,7 @@
             </div>
         </section>
 
-        <!-- Dynamic Scrolling Client Logos Section -->
-        <section class="py-16 md:py-24 bg-brand-dark overflow-x-hidden">
+        <section class="py-16 md:py-24 bg-brand-dark">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-white">Trusted by Industry Leaders</h2>
@@ -234,21 +233,16 @@
                 </div>
             </div>
             
-            <div class="relative w-full py-8" x-data="{}" x-init="
-                // This script creates the seamless, infinite loop.
-                // 1. It finds the scroller element.
+            <div class="scroller-container py-8" x-data="{}" x-init="
                 const scroller = $refs.scroller;
-                // 2. It gets all the direct children (the logo items).
                 const scrollerContent = Array.from(scroller.children);
-                // 3. It loops through each item, creates a copy, and adds it to the end of the scroller.
                 scrollerContent.forEach(item => {
                     const duplicatedItem = item.cloneNode(true);
-                    duplicatedItem.setAttribute('aria-hidden', true); // Hides duplicates from screen readers for accessibility.
+                    duplicatedItem.setAttribute('aria-hidden', true);
                     scroller.appendChild(duplicatedItem);
                 });
             ">
                 <div class="scroller-inner flex gap-16" x-ref="scroller">
-                    <!-- Each logo is wrapped in a div to create a uniform, larger container -->
                     <div class="logo-item"><img src="Client-Logos/Acer_logo_logotype_emblem.png" alt="Acer Logo" class="client-logo-scroll" /></div>
                     <div class="logo-item"><img src="Client-Logos/Anora-logo.png" alt="Anora Group Logo" class="client-logo-scroll" /></div>
                     <div class="logo-item"><img src="Client-Logos/artium academy.jpg" alt="Artium Academy Logo" class="client-logo-scroll" /></div>
@@ -268,7 +262,6 @@
             </div>
         </section>
 
-        <!-- Final CTA Section -->
         <section class="bg-brand-secondary">
             <div class="container mx-auto px-6 py-16 text-center">
                 <h2 class="text-3xl font-bold text-brand-dark">Ready to Transform Your Workplace?</h2>
@@ -282,7 +275,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-slate-100">
         <div class="container mx-auto px-6 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -326,7 +318,6 @@
         });
     </script>
 
-    <!-- Alpine.js for client logo scroller - place before closing </body> -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>
