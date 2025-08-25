@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POSH Compliance – More Than Just a Legal Requirement | The People Studio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../CompanyLogo.jpg">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter (for body) and Lora (for headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Lora', 'serif'],
+                    },
+                    colors: {
+                        'brand-primary': '#4A69E2',
+                        'brand-secondary': '#FDFBF5',
+                        'brand-dark': '#2C2C2C',
+                        'brand-accent-red': '#E84D4D',
+                        'brand-accent-yellow': '#F2C94C',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        h1, h2, h3, h4 { font-family: 'Lora', serif; }
+        
+        header nav a { position: relative; }
+        header nav a:not(.active-link)::after {
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: -4px; left: 50%; transform: translateX(-50%);
+            background-color: #4A69E2; transition: width 0.3s ease-in-out;
+        }
+        header nav a:hover::after { width: 100%; }
+        .active-link { color: #4A69E2; font-weight: 600; }
+
+        .blog-content h3 {
+            font-size: 1.5rem; /* 24px */
+            font-weight: 700;
+            color: #2C2C2C;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .blog-content p {
+            margin-bottom: 1.25rem;
+            line-height: 1.7;
+        }
+        .reaction-btn {
+            transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+        }
+        .reaction-btn:hover:not(:disabled) {
+            transform: scale(1.1);
+        }
+        .reaction-btn.reacted {
+            transform: scale(1.15);
+            filter: saturate(1.8);
+        }
+        .reaction-btn:disabled {
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="bg-white font-sans text-slate-700">
+
+    <!-- Header Section -->
+    <header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-200">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="./home.html">
+                <img src="../CompanyLogo.jpg" alt="The People Studio Logo" class="h-16 w-auto">
+            </a>
+            <nav class="hidden md:flex items-center space-x-10 text-slate-600">
+                <a href="./home.html" class="hover:text-brand-primary transition-colors">Home</a>
+                <a href="./about.html" class="hover:text-brand-primary transition-colors">About Us</a>
+                <a href="./service.html" class="hover:text-brand-primary transition-colors">Services</a>
+                <a href="./blog.html" class="active-link">Blog</a>
+                <a href="./contact.html" class="hover:text-brand-primary transition-colors">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-slate-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+             <a href="./home.html" class="block text-slate-600 hover:text-brand-primary transition-colors">Home</a>
+            <a href="./about.html" class="block text-slate-600 hover:text-brand-primary transition-colors">About Us</a>
+            <a href="./service.html" class="block text-slate-600 hover:text-brand-primary transition-colors">Services</a>
+            <a href="./blog.html" class="block text-brand-primary font-semibold">Blog</a>
+            <a href="./contact.html" class="block text-slate-600 hover:text-brand-primary transition-colors">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Blog Post Content -->
+        <article class="py-16 md:py-24">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <!-- Post Header -->
+                <header class="text-center mb-12">
+                    <p class="text-brand-primary font-semibold">COMPLIANCE</p>
+                    <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mt-2">POSH Compliance – More Than Just a Legal Requirement</h1>
+                    <div class="mt-6 text-sm text-slate-500">
+                        <span>By Sandhya Prithvi</span> | <span>August 26, 2025</span>
+                    </div>
+                </header>
+
+                <!-- Feature Image -->
+                <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop" alt="People working together in a safe and respectful office" class="w-full h-auto rounded-lg shadow-lg mb-12">
+
+                <!-- Blog Body -->
+                <div class="blog-content text-lg text-slate-800">
+                    <p>A few years ago, I was conducting a POSH awareness session at a mid-sized company. During a break, a young woman quietly walked up to me. She said, “I know POSH is a law, but until today, I never felt my company saw it as protection for me. It always felt like paperwork.”</p>
+                    <p>That sentence stayed with me.</p>
+                    <p>Too often, organizations treat POSH like an annual audit. A policy tucked into the handbook. A training to “tick the box.” A committee formed only because the law mandates it. But here’s the truth: <strong>POSH is not just compliance. It’s culture.</strong></p>
+
+                    <h3>Why POSH Must Go Beyond the Rulebook</h3>
+                    <p><strong>Safety Builds Trust:</strong> When employees feel safe, they bring their whole selves to work. Creativity and performance flow naturally in such spaces.</p>
+                    <p><strong>Respect Fuels Belonging:</strong> POSH isn’t only about preventing misconduct. It’s about embedding respect in every interaction — across genders, hierarchies, and teams.</p>
+                    <p><strong>Culture Shapes Reputation:</strong> One incident mishandled can undo years of brand-building. But a culture that truly protects people builds pride and loyalty.</p>
+                    <p><strong>Leaders Set the Tone:</strong> Employees don’t look at policies; they look at how leaders respond. A leader who addresses issues with fairness signals that dignity is non-negotiable.</p>
+                    
+                    <p>At The People Studio, our mission is to help organizations go beyond legal obligation and build cultures where respect and dignity are everyday values.</p>
+                </div>
+
+                <!-- Reactions Section -->
+                <hr class="my-12 border-slate-200">
+                <div class="text-center">
+                    <h4 class="font-semibold text-brand-dark mb-4">Did you find this article helpful?</h4>
+                    <div id="reactions" class="flex justify-center items-center space-x-4">
+                        <button class="reaction-btn p-2 rounded-full hover:bg-slate-200" data-reaction="like">
+                            <span class="text-2xl">👍</span> <span class="text-sm font-bold text-slate-600 ml-1">0</span>
+                        </button>
+                        <button class="reaction-btn p-2 rounded-full hover:bg-slate-200" data-reaction="love">
+                            <span class="text-2xl">❤️</span> <span class="text-sm font-bold text-slate-600 ml-1">0</span>
+                        </button>
+                        <button class="reaction-btn p-2 rounded-full hover:bg-slate-200" data-reaction="insightful">
+                            <span class="text-2xl">💡</span> <span class="text-sm font-bold text-slate-600 ml-1">0</span>
+                        </button>
+                    </div>
+                </div>
+                <hr class="my-12 border-slate-200">
+
+                <!-- Comments Section -->
+                <div class="max-w-3xl mx-auto">
+                    <h3 class="text-2xl font-bold text-brand-dark mb-6">Leave a Comment</h3>
+                    <form id="comment-form">
+                        <div class="mb-4">
+                            <label for="comment-name" class="block text-sm font-medium text-slate-700 mb-1">Name</label>
+                            <input type="text" id="comment-name" required class="w-full rounded-md border-slate-300 shadow-sm">
+                        </div>
+                        <div class="mb-4">
+                            <label for="comment-text" class="block text-sm font-medium text-slate-700 mb-1">Comment</label>
+                            <textarea id="comment-text" rows="4" required class="w-full rounded-md border-slate-300 shadow-sm"></textarea>
+                        </div>
+                        <button type="submit" class="bg-brand-primary text-white font-semibold py-2 px-6 rounded-lg hover:bg-opacity-90 transition-colors">Submit Comment</button>
+                    </form>
+
+                    <div id="comments-list" class="mt-12 space-y-6">
+                        <h3 class="text-2xl font-bold text-brand-dark border-b border-slate-200 pb-4">Comments (0)</h3>
+                        <!-- Comments will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-100">
+       <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-xl font-bold text-brand-dark mb-4">The People Studio</h3>
+                    <p class="text-slate-600">Crafting journeys of growth and impact.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-brand-dark mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="./home.html" class="text-slate-600 hover:text-brand-primary">Home</a></li>
+                        <li><a href="./about.html" class="text-slate-600 hover:text-brand-primary">About Us</a></li>
+                        <li><a href="./service.html" class="text-slate-600 hover:text-brand-primary">Services</a></li>
+                        <li><a href="./contact.html" class="text-slate-600 hover:text-brand-primary">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-brand-dark mb-4">Contact</h4>
+                    <ul class="space-y-2 text-slate-600">
+                        <li><a href="mailto:sandhya.prithvi@thepeoplestudio.com" class="hover:text-brand-primary">sandhya.prithvi@thepeoplestudio.com</a></li>
+                        <li><a href="tel:+919739550101" class="hover:text-brand-primary">+91 9739550101</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-slate-200 pt-6 text-center text-sm text-slate-500">
+                <p>&copy; 2025 The People Studio. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+        import { getFirestore, doc, getDoc, setDoc, onSnapshot, collection, addDoc, query, orderBy, serverTimestamp, runTransaction } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        async function authenticateUser() {
+            try {
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                } else {
+                    await signInAnonymously(auth);
+                }
+            } catch (error) {
+                console.error("Authentication failed:", error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await authenticateUser();
+            
+            const blogPostId = 'posh-compliance'; // Unique ID for this blog post
+            const postRef = doc(db, `artifacts/${appId}/public/data/posts`, blogPostId);
+            const commentsRef = collection(postRef, 'comments');
+
+            const reactionsContainer = document.getElementById('reactions');
+
+            onSnapshot(postRef, (docSnap) => {
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    updateReactionCounts(data.reactions || {});
+                } else {
+                    setDoc(postRef, { reactions: { like: 0, love: 0, insightful: 0 } });
+                }
+            });
+
+            function updateReactionCounts(reactions) {
+                reactionsContainer.querySelectorAll('.reaction-btn').forEach(btn => {
+                    const reactionType = btn.dataset.reaction;
+                    const countSpan = btn.querySelector('span:last-child');
+                    countSpan.textContent = reactions[reactionType] || 0;
+                });
+            }
+
+            reactionsContainer.addEventListener('click', async (e) => {
+                const button = e.target.closest('.reaction-btn');
+                if (!button || button.disabled) return;
+
+                const reactionType = button.dataset.reaction;
+                const reactedKey = `reacted_${blogPostId}`;
+
+                if (localStorage.getItem(reactedKey)) {
+                    alert("You've already reacted to this post.");
+                    return;
+                }
+
+                reactionsContainer.querySelectorAll('.reaction-btn').forEach(btn => btn.disabled = true);
+
+                try {
+                    await runTransaction(db, async (transaction) => {
+                        const postDoc = await transaction.get(postRef);
+                        if (!postDoc.exists()) throw "Document does not exist!";
+                        
+                        const newReactions = { ...postDoc.data().reactions };
+                        newReactions[reactionType] = (newReactions[reactionType] || 0) + 1;
+                        transaction.update(postRef, { reactions: newReactions });
+                    });
+                    
+                    localStorage.setItem(reactedKey, reactionType);
+                    button.classList.add('reacted');
+
+                } catch (error) {
+                    console.error("Transaction failed: ", error);
+                } finally {
+                     reactionsContainer.querySelectorAll('.reaction-btn').forEach(btn => btn.disabled = false);
+                }
+            });
+
+            const reactedKey = `reacted_${blogPostId}`;
+            const userReaction = localStorage.getItem(reactedKey);
+            if (userReaction) {
+                const reactedButton = reactionsContainer.querySelector(`[data-reaction="${userReaction}"]`);
+                if (reactedButton) reactedButton.classList.add('reacted');
+            }
+
+            const commentForm = document.getElementById('comment-form');
+            const commentsList = document.getElementById('comments-list');
+            const commentsHeader = commentsList.querySelector('h3');
+
+            const q = query(commentsRef, orderBy("timestamp", "asc"));
+            onSnapshot(q, (snapshot) => {
+                commentsList.innerHTML = `<h3 class="text-2xl font-bold text-brand-dark border-b border-slate-200 pb-4">Comments (${snapshot.size})</h3>`;
+                snapshot.forEach((doc) => renderComment(doc.data()));
+            });
+
+            function renderComment(data) {
+                const name = data.name || "Anonymous";
+                const commentText = data.text || "";
+                const date = data.timestamp ? data.timestamp.toDate().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : 'Just now';
+                const initials = name.split(' ').map(n => n[0]).join('').toUpperCase();
+
+                const commentHTML = `
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 bg-brand-secondary rounded-full flex items-center justify-center font-bold text-brand-dark">${initials}</div>
+                        <div class="ml-4">
+                            <p class="font-semibold text-brand-dark">${name}</p>
+                            <p class="text-slate-600 text-sm">${date}</p>
+                            <p class="mt-2 text-slate-700">${commentText}</p>
+                        </div>
+                    </div>
+                `;
+                commentsList.insertAdjacentHTML('beforeend', commentHTML);
+            }
+
+            commentForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const nameInput = document.getElementById('comment-name');
+                const commentInput = document.getElementById('comment-text');
+                const name = nameInput.value.trim();
+                const text = commentInput.value.trim();
+
+                if (!name || !text) {
+                    alert('Please fill in both your name and comment.');
+                    return;
+                }
+
+                try {
+                    await addDoc(commentsRef, {
+                        name: name,
+                        text: text,
+                        timestamp: serverTimestamp()
+                    });
+                    nameInput.value = '';
+                    commentInput.value = '';
+                } catch (error) {
+                    console.error("Error adding comment: ", error);
+                    alert("There was an error submitting your comment. Please try again.");
+                }
+            });
+            
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
